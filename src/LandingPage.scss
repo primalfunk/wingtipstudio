@@ -1,0 +1,237 @@
+@font-face {
+    font-family: 'Exo2';
+    src: url('../public/fonts/exo2.ttf') format('truetype');
+}
+
+// Define Variables
+$primaryColor: black;
+$buttonHoverColor: #007777;
+$fontFamily: 'Exo2', sans-serif;
+$transitionDuration: 3s;
+$fadeDuration: 3s;
+// Variables for colors
+$codeColor: rgba(0, 0, 255, 0.5); // Blue with transparency
+$musicColor: rgba(255, 0, 0, 0.5); // Red with transparency
+$hireMeColor: rgba(0, 255, 0, 0.5); // Green with transparency
+$contactColor: rgba(255, 255, 0, 0.5); // Yellow with transparency
+$initialButtonWidth: 200px;
+$initialButtonHeight: 50px; 
+
+// Mixins
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin buttonStyle {
+  width: 200px;
+  height: 50px;
+  padding: 10px 20px;
+  background-color: #615b5b;
+  border: none;
+  color: white;
+  font-family: $fontFamily;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform $transitionDuration, background-color $transitionDuration;
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: $buttonHoverColor;
+  }
+}
+
+// Landing Page Styles
+.landing-page {
+  @include flexCenter;
+  flex-direction: column;
+  height: 100vh;
+  background-color: $primaryColor;
+  font-family: $fontFamily;
+
+  &.transparent-bg {
+    background-color: transparent;
+  }
+}
+
+.image-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../public/background-img.png') no-repeat center center;
+    background-size: cover;
+    z-index: -1; // Image is below the black cover
+    opacity: 1; // Image is always visible
+}
+
+.black-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 0; // Initially above the image
+    opacity: 1; // Starts as opaque
+    transition: opacity 10s ease; // Transition for fading out
+
+    &.hide {
+        opacity: 0; // Becomes transparent to reveal the image
+    }
+}
+
+// Wingtip Button
+.wingtip-button {
+  @include buttonStyle;
+  transition: opacity 2s ease;
+  z-index: 1;
+}
+
+.wingtip-button.text-invisible {
+    color: transparent; // Make the text transparent immediately
+}
+
+// Quadrant Container
+.quadrant-container {
+  @include flexCenter;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+// Quadrant Buttons
+.quadrant-button {
+    @include flexCenter;
+    position: absolute;
+    width: $initialButtonWidth;
+    height: $initialButtonHeight;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    border: none;
+    transition: all $transitionDuration ease;
+    pointer-events: none; // Initially disable pointer events
+    opacity: 1;
+
+    // Enable pointer events when the button is active
+    &.expandCode, &.expandMusic, &.expandContact, &.expandHireMe {
+        pointer-events: auto; 
+    }
+    &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+    &.code-button { background-color: $codeColor; }
+    &.music-button { background-color: $musicColor; }
+    &.contact-button { background-color: $contactColor; }
+    &.hireme-button { background-color: $hireMeColor; }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #805997;
+    opacity: 0.5;
+    z-index: 1;
+    transition: all $transitionDuration ease;
+  }
+
+  & span {
+    opacity: 0;
+    animation: fadeInText 3s forwards;
+    animation-delay: 0;
+  }
+
+  &:hover {
+    background-color: #aaa;
+    transform: scale(1.05);
+    opacity: 0.5;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    background-color: #888;
+  }
+
+  // Expand animation classes
+  &.expandCode {
+    animation: expand 1s forwards, fadeIn 1s $fadeDuration forwards;
+    animation-delay: 0s, 3s; // Adjust delay as needed
+  }
+  &.expandMusic {
+    animation: expand 1s forwards, fadeIn 1s $fadeDuration forwards;
+    animation-delay: 1s, 4s; // Delayed start
+  }
+  &.expandContact {
+    animation: expand 1s forwards, fadeIn 1s $fadeDuration forwards;
+    animation-delay: 2s, 5s; // Further delayed
+  }
+  &.expandHireMe {
+    animation: expand 1s forwards, fadeIn 1s $fadeDuration forwards;
+    animation-delay: 3s, 6s; // Even more delayed
+  }
+}
+
+// Navigation Pane
+.navigation-pane {
+  @include flexCenter;
+  position: absolute;
+  background-color: #110011;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+  justify-content: space-around;
+
+  a, span {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+// Animations
+@keyframes fadeInText {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes moveToQuadrant {
+    to {
+        width: 50vw;
+        height: 50vh;
+        transform: translate(var(--translateX), var(--translateY)) scale(1);
+    }
+}
+.quadrant-button.expandCode {
+    --translateX: -50vw;
+    --translateY: -50vh;
+    animation: moveToQuadrant $transitionDuration forwards;
+}
+
+.quadrant-button.expandMusic {
+    --translateX: 0vw;
+    --translateY: -50vh;
+    animation: moveToQuadrant $transitionDuration forwards;
+}
+
+.quadrant-button.expandContact {
+    --translateX: -50vw;
+    --translateY: 0vh;
+    animation: moveToQuadrant $transitionDuration forwards;
+}
+
+.quadrant-button.expandHireMe {
+    --translateX: 0vw;
+    --translateY: 0vh;
+    animation: moveToQuadrant $transitionDuration forwards;
+}
