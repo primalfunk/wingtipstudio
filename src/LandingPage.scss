@@ -70,12 +70,12 @@ $initialButtonHeight: 50px;
     width: 100%;
     height: 100%;
     background-color: black;
-    z-index: 0; // Initially above the image
-    opacity: 1; // Starts as opaque
-    transition: opacity 10s ease; // Transition for fading out
+    z-index: 0;
+    opacity: 1;
+    transition: opacity 10s ease;
 
     &.hide {
-        opacity: 0; // Becomes transparent to reveal the image
+        opacity: 0;
     }
 }
 
@@ -87,10 +87,9 @@ $initialButtonHeight: 50px;
 }
 
 .wingtip-button.text-invisible {
-    color: transparent; // Make the text transparent immediately
+    color: transparent;
 }
 
-// Quadrant Container
 .quadrant-container {
   @include flexCenter;
   position: absolute;
@@ -99,7 +98,6 @@ $initialButtonHeight: 50px;
   pointer-events: none;
 }
 
-// Quadrant Buttons
 .quadrant-button {
     @include flexCenter;
     position: absolute;
@@ -113,10 +111,9 @@ $initialButtonHeight: 50px;
     color: black;
     border: none;
     transition: all $transitionDuration ease;
-    pointer-events: none; // Initially disable pointer events
+    pointer-events: none;
     opacity: 1;
 
-    // Enable pointer events when the button is active
     &.expandCode, &.expandMusic, &.expandContact, &.expandHireMe {
         pointer-events: auto; 
     }
@@ -148,7 +145,7 @@ $initialButtonHeight: 50px;
 
   & span {
     opacity: 0;
-    animation: fadeInText 3s forwards;
+    animation: fadeInText 5s forwards;
     animation-delay: 0;
   }
 
@@ -166,36 +163,19 @@ $initialButtonHeight: 50px;
   // Expand animation classes
   &.expandCode {
     animation: expand 1s forwards, fadeIn 1s $fadeDuration forwards;
-    animation-delay: 0s, 3s; // Adjust delay as needed
+    animation-delay: 0s, 3s;
   }
   &.expandMusic {
     animation: expand 1s forwards, fadeIn 1s $fadeDuration forwards;
-    animation-delay: 1s, 4s; // Delayed start
+    animation-delay: 1s, 4s;
   }
   &.expandContact {
     animation: expand 1s forwards, fadeIn 1s $fadeDuration forwards;
-    animation-delay: 2s, 5s; // Further delayed
+    animation-delay: 2s, 5s;
   }
   &.expandHireMe {
     animation: expand 1s forwards, fadeIn 1s $fadeDuration forwards;
-    animation-delay: 3s, 6s; // Even more delayed
-  }
-}
-
-// Navigation Pane
-.navigation-pane {
-  @include flexCenter;
-  position: absolute;
-  background-color: #110011;
-  bottom: 0;
-  width: 100%;
-  padding: 10px 0;
-  border-top: 1px solid #ccc;
-  justify-content: space-around;
-
-  a, span {
-    color: white;
-    text-decoration: none;
+    animation-delay: 3s, 6s;
   }
 }
 

@@ -1,0 +1,28 @@
+// Define Variables
+$navigationPaneBgColor: #110011; // Adjust color as needed
+$navigationPaneTextColor: white;
+$navigationPaneBorderTopColor: #ccc;
+
+// Mixin for Flex Center
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Navigation Pane Styles
+.navigation-pane {
+  @include flexCenter;
+  position: absolute;
+  background-color: $navigationPaneBgColor;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  border-top: 1px solid $navigationPaneBorderTopColor;
+  justify-content: space-around;
+
+  a, span {
+    color: $navigationPaneTextColor;
+    text-decoration: none;
+  }
+}

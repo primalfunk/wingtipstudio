@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './LandingPage.scss';
+import NavigationPane from './NavigationPane'; // Import the new component
+
 
 function LandingPage() {
     const [animate, setAnimate] = useState(false);
@@ -7,6 +11,7 @@ function LandingPage() {
     const [activeQuadrants, setActiveQuadrants] = useState([]);
     const [wingtipButtonVisible, setWingtipButtonVisible] = useState(true);
     const [wingtipButtonTextVisible, setWingtipButtonTextVisible] = useState(true);
+    const [animationsCompleted, setAnimationsCompleted] = useState(false);
 
     useEffect(() => {
         console.log("Component mounted. Initial states:", { animate, showImage, activeQuadrants });
@@ -25,37 +30,40 @@ function LandingPage() {
             setWingtipButtonTextVisible(false);
             setWingtipButtonVisible(false);
         }, 11000);
+        setTimeout(() => {
+            setAnimationsCompleted(true); // Set this after the last animation completes
+        }, 11000); 
     };
 
     useEffect(() => {
         console.log("States updated:", { animate, showImage, activeQuadrants });
     }, [animate, showImage, activeQuadrants]);
 
+    const navigate = useNavigate();
+
     const handleCodeClick = () => {
         console.log("Navigate to Code page");
-        // Here you can add navigation logic
+        navigate('/code');
     };
 
     const handleMusicClick = () => {
         console.log("Navigate to Music page");
-        // Navigation logic
+        navigate('/music');
     };
 
     const handleContactClick = () => {
         console.log("Navigate to Contact page");
-        // Navigation logic
+        navigate('/contact');
     };
 
     const handleHireMeClick = () => {
         console.log("Navigate to Hire Me page");
-        // Navigation logic
+        navigate('/hireme');
     };
 
     return (
         <div className={`landing-page ${showImage ? 'transparent-bg' : ''}`}>
-            <div className="image-background" /> {/* This div represents the background image */}
-
-            {/* Add the black cover div below */}
+            <div className="image-background" />
             <div className={`black-cover ${showImage ? 'hide' : ''}`} />
             {wingtipButtonVisible && (
                 <button 
@@ -67,26 +75,20 @@ function LandingPage() {
                 </button>
             )}
             <div className="quadrant-container">
-                <div className={`quadrant-button music-button ${activeQuadrants.includes('expandMusic') ? 'expandMusic' : ''}`} onClick={handleMusicClick}>
+                <div className={`quadrant-button music-button ${activeQuadrants.includes('expandMusic') ? 'expandMusic' : ''}`} style={{ pointerEvents: animationsCompleted ? 'auto' : 'none' }} onClick={handleMusicClick}>
                         <span style={{ animationDelay: activeQuadrants.includes('showText') ? '0s' : '10s' }}>Music</span>
                 </div>
-                <div className={`quadrant-button code-button ${activeQuadrants.includes('expandCode') ? 'expandCode' : ''}`}onClick={handleCodeClick}>
+                <div className={`quadrant-button code-button ${activeQuadrants.includes('expandCode') ? 'expandCode' : ''}`} style={{ pointerEvents: animationsCompleted ? 'auto' : 'none' }} onClick={handleCodeClick}>
                     <span style={{ animationDelay: activeQuadrants.includes('showText') ? '0s' : '10s' }}>Code</span>
                 </div>
-                <div className={`quadrant-button contact-button ${activeQuadrants.includes('expandContact') ? 'expandContact' : ''}`}onClick={handleContactClick}>
+                <div className={`quadrant-button contact-button ${activeQuadrants.includes('expandContact') ? 'expandContact' : ''}`} style={{ pointerEvents: animationsCompleted ? 'auto' : 'none' }} onClick={handleContactClick}>
                     <span style={{ animationDelay: activeQuadrants.includes('showText') ? '0s' : '10s' }}>Contact</span>
                 </div>
-                <div className={`quadrant-button hireme-button ${activeQuadrants.includes('expandHireMe') ? 'expandHireMe' : ''}`}onClick={handleHireMeClick}>
+                <div className={`quadrant-button hireme-button ${activeQuadrants.includes('expandHireMe') ? 'expandHireMe' : ''}`} style={{ pointerEvents: animationsCompleted ? 'auto' : 'none' }} onClick={handleHireMeClick}>
                     <span style={{ animationDelay: activeQuadrants.includes('showText') ? '0s' : '10s' }}>Hire</span>
                 </div>
             </div>
-            <div className="navigation-pane">
-                <a href="#code">Code</a>
-                <a href="#music">Music</a>
-                <a href="#contact">Contact</a>
-                <a href="#hireme">Hire Me</a>
-                <span>All Rights Reserved 2024</span>
-            </div>
+            <NavigationPane /> 
         </div>
     );
 }
