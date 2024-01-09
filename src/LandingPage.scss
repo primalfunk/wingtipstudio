@@ -53,13 +53,16 @@ $initialButtonHeight: 50px;
   &.transparent-bg {
     background-color: transparent;
   }
+
 }
+
+
 
 .image-background {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url('../public/background-img.png') no-repeat center center;
+    background: url('../public/images/background-img.png') no-repeat center center;
     background-size: cover;
     z-index: -1; // Image is below the black cover
     opacity: 1; // Image is always visible
@@ -145,7 +148,7 @@ $initialButtonHeight: 50px;
 
   & span {
     opacity: 0;
-    animation: fadeInText 5s forwards;
+    animation: fadeInText 3s forwards;
     animation-delay: 0;
   }
 
@@ -177,6 +180,11 @@ $initialButtonHeight: 50px;
     animation: expand 1s forwards, fadeIn 1s $fadeDuration forwards;
     animation-delay: 3s, 6s;
   }
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 5.0s ease-out;
 }
 
 // Animations

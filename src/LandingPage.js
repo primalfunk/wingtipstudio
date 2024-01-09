@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import './LandingPage.scss';
-import NavigationPane from './NavigationPane'; // Import the new component
+import NavigationPane from './NavigationPane';
 
 
 function LandingPage() {
@@ -12,6 +11,7 @@ function LandingPage() {
     const [wingtipButtonVisible, setWingtipButtonVisible] = useState(true);
     const [wingtipButtonTextVisible, setWingtipButtonTextVisible] = useState(true);
     const [animationsCompleted, setAnimationsCompleted] = useState(false);
+    const [exitAnimation, setExitAnimation] = useState(false);
 
     useEffect(() => {
         console.log("Component mounted. Initial states:", { animate, showImage, activeQuadrants });
@@ -21,18 +21,18 @@ function LandingPage() {
         setAnimate(true);
         setShowImage(true);
     
-        setTimeout(() => setActiveQuadrants(prev => [...prev, 'expandCode']), 5000);
-        setTimeout(() => setActiveQuadrants(prev => [...prev, 'expandMusic']), 6000);
-        setTimeout(() => setActiveQuadrants(prev => [...prev, 'expandContact']), 7000);
-        setTimeout(() => setActiveQuadrants(prev => [...prev, 'expandHireMe']), 8000);
+        setTimeout(() => setActiveQuadrants(prev => [...prev, 'expandCode']), 3000);
+        setTimeout(() => setActiveQuadrants(prev => [...prev, 'expandMusic']), 4000);
+        setTimeout(() => setActiveQuadrants(prev => [...prev, 'expandContact']), 5000);
+        setTimeout(() => setActiveQuadrants(prev => [...prev, 'expandHireMe']), 6000);
         setTimeout(() => {
             setActiveQuadrants(prev => [...prev, 'showText']);
             setWingtipButtonTextVisible(false);
             setWingtipButtonVisible(false);
-        }, 11000);
+        }, 9000);
         setTimeout(() => {
-            setAnimationsCompleted(true); // Set this after the last animation completes
-        }, 11000); 
+            setAnimationsCompleted(true);
+        }, 9000); 
     };
 
     useEffect(() => {
@@ -42,27 +42,34 @@ function LandingPage() {
     const navigate = useNavigate();
 
     const handleCodeClick = () => {
-        console.log("Navigate to Code page");
-        navigate('/code');
+        setExitAnimation(true);
+        setTimeout(() => {
+            navigate('/code');
+        }, 5000);
     };
 
     const handleMusicClick = () => {
-        console.log("Navigate to Music page");
-        navigate('/music');
+        setExitAnimation(true);
+        setTimeout(() => {
+            navigate('/music');
+        }, 5000);
     };
-
     const handleContactClick = () => {
-        console.log("Navigate to Contact page");
-        navigate('/contact');
+        setExitAnimation(true);
+        setTimeout(() => {
+            navigate('/contact');
+        }, 5000);
     };
 
     const handleHireMeClick = () => {
-        console.log("Navigate to Hire Me page");
-        navigate('/hireme');
+        setExitAnimation(true);
+        setTimeout(() => {
+            navigate('/hireme');
+        }, 5000);
     };
 
     return (
-        <div className={`landing-page ${showImage ? 'transparent-bg' : ''}`}>
+        <div className={`landing-page ${showImage ? 'transparent-bg' : ''} ${exitAnimation ? 'fade-out' : ''}`}>
             <div className="image-background" />
             <div className={`black-cover ${showImage ? 'hide' : ''}`} />
             {wingtipButtonVisible && (

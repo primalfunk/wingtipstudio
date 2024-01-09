@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Exo2';
+    src: url('../public/fonts/exo2.ttf') format('truetype');
+}
+
+.contact-form-container {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #070606;
+    border-radius: 8px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            padding: 10px;
+            border: 2px solid grey; // Initially greyscale
+            border-radius: 4px;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+            transition: filter 2s ease, border-color 2s ease, background-color 2s ease, color 2s ease;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: grey; // Initially greyscale
+            color: grey; // Initially greyscale
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            filter: grayscale(100%);
+            transition: filter 2s ease, background-color 2s ease, color 2s ease;
+
+            &:hover {
+                background-color: #8a8585;
+            }
+        }
+    }
+}
+
+.contact-us-tag {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-page {
+    font-family: 'Exo2', sans-serif;
+    color: #8cd0d4;
+    min-height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    opacity: 0; // Start fully transparent
+    transition: opacity 3s ease; // Transition for the fade-in effect
+
+    &.fade-in {
+        opacity: 1; // Fully opaque when fade-in class is added
+    }
+}
+
+.input-text,
+.textarea,
+.button {
+    filter: grayscale(100%);
+    transition: filter 2s ease, border-color 2s ease, background-color 2s ease, color 2s ease;
+}
+
+.button-background-color {
+    .button {
+        background-color: rgb(25, 8, 180); // Final button background color
+        filter: none; // Remove grayscale filter
+    }
+}
+
+.textarea-border-color {
+    .textarea {
+        border-color: #ca7526; // Final textarea border color
+        filter: none; // Remove grayscale filter
+    }
+}
+
+.button-color {
+    .button {
+        color: rgb(122, 192, 137); // Final button text color
+        filter: none; // Remove grayscale filter
+    }
+}
+
+.page-color {
+    .contact-page, .contact-us-tag, .input-text, .textarea {
+        color: #8cd0d4; // Final page text color
+        filter: none; // Remove grayscale filter from page text
+    }
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    .icon {
+        width: 40px;
+        height: 40px;
+        background-size: cover;
+        transition: transform 0.3s ease, filter 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+            filter: none;
+        }
+    }
+    .facebook-icon {
+        background-image: url('../public/images/fbicon.png'); // Updated path
+        filter: grayscale(100%);
+    }
+
+    .linkedin-icon {
+        background-image: url('../public/images/liicon.png'); // Updated path
+        filter: grayscale(100%);
+    }
+    
+    .github-icon {
+        background-image: url('../public/images/ghicon.png'); // Updated path
+        filter: grayscale(100%);
+    }
+}
