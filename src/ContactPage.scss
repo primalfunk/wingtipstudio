@@ -3,6 +3,95 @@
     src: url('../public/fonts/exo2.ttf') format('truetype');
 }
 
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); // Semi-transparent background
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.contact-page {
+    z-index: 5;
+    position: relative;
+    font-family: 'Exo2', sans-serif;
+    min-height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 5s ease;
+
+    &.fade-in {
+        opacity: 1;
+    }
+}
+
+.background-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../public/images/contact-back.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 5s ease;
+    z-index: 0;
+    &.background-image-visible {
+        opacity: 1;
+    }
+    &.background-image-visible {
+        opacity: 1;
+    }
+}
+
+.input-text,
+.textarea,
+.button {
+    filter: grayscale(100%);
+    transition: filter 2s ease, border-color 2s ease, background-color 2s ease, color 2s ease;
+}
+
+.button-background-color .button {
+    background-color: #053cb1;
+    filter: none;
+}
+
+.textarea-border-color .textarea {
+    border-color: #c25309;
+    filter: none;
+}
+
+.button-color .button {
+    color: rgb(122, 192, 137);
+    filter: none;
+}
+
+.page-color {
+    .contact-us-tag {
+        color: #053cb1;
+    }
+
+    .contact-page, .input-text, .textarea, .contact-form-container form label {
+        color: #053cb1;
+        filter: none;
+    }
+}
+
 .contact-form-container {
     margin: 20px auto;
     max-width: 600px;
@@ -15,12 +104,20 @@
         flex-direction: column;
         
         label {
+            z-index: 5;
             margin-top: 10px;
             margin-bottom: 5px;
+            background-color: rgba(213, 218, 196, 0.8); // Semi-transparent white background
+            padding: 10px; // Adjust padding as needed
+            border-radius: 5px; // Optional, for rounded corners
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+            color:rgb(22, 22, 22);
+            transition: color 2s ease;
         }
 
         input[type="text"],
         textarea {
+            z-index: 5;
             padding: 10px;
             border: 2px solid grey; // Initially greyscale
             border-radius: 4px;
@@ -30,9 +127,10 @@
         }
 
         button {
+            z-index: 5;
             padding: 10px 20px;
-            background-color: grey; // Initially greyscale
-            color: grey; // Initially greyscale
+            background-color: rgb(22, 22, 22);
+            color: rgb(228, 231, 194);
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -47,57 +145,20 @@
 }
 
 .contact-us-tag {
+    z-index: 5;
+    position: relative;
     display: flex;
     justify-content: center;
-}
-
-.contact-page {
-    font-family: 'Exo2', sans-serif;
-    color: #8cd0d4;
-    min-height: 100vh;
-    background-color: black;
-    overflow: hidden;
-    opacity: 0; // Start fully transparent
-    transition: opacity 3s ease; // Transition for the fade-in effect
-
-    &.fade-in {
-        opacity: 1; // Fully opaque when fade-in class is added
-    }
-}
-
-.input-text,
-.textarea,
-.button {
-    filter: grayscale(100%);
-    transition: filter 2s ease, border-color 2s ease, background-color 2s ease, color 2s ease;
-}
-
-.button-background-color {
-    .button {
-        background-color: rgb(25, 8, 180); // Final button background color
-        filter: none; // Remove grayscale filter
-    }
-}
-
-.textarea-border-color {
-    .textarea {
-        border-color: #ca7526; // Final textarea border color
-        filter: none; // Remove grayscale filter
-    }
-}
-
-.button-color {
-    .button {
-        color: rgb(122, 192, 137); // Final button text color
-        filter: none; // Remove grayscale filter
-    }
-}
-
-.page-color {
-    .contact-page, .contact-us-tag, .input-text, .textarea {
-        color: #8cd0d4; // Final page text color
-        filter: none; // Remove grayscale filter from page text
-    }
+    align-items: center; // Ensure vertical alignment if needed
+    background-color: rgba(215, 218, 184, 0.8);
+    padding: 9px;    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    margin: 0 auto;
+    text-align: center;
+    color: grey; // Start with grey color
+    padding-top: calc(9px - 4px); 
+    transition: color 2s ease; // Transition for changing color
 }
 
 .social-media-icons {
