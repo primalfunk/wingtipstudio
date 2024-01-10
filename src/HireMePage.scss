@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../public/fonts/roboto.ttf') format('truetype');
+}
+
+.hire-me-page {
+    font-family: 'roboto', sans-serif;
+    position: relative;
+    opacity: 0;
+    transition: opacity 3s ease;
+    background-image: url('../public/images/hireme-back.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    min-height: 100vh;
+
+    .page-title {
+        margin-top: 20px;
+        font-size: 36px;
+        background-color: rgba(255, 255, 255, 0.8); // Semi-transparent white background
+        padding: 10px;
+        border-radius: 5px; // Rounded corners
+        display: inline-block; // Only as wide as the content
+    }
+
+    .intro-paragraph, .conclusion-paragraph {
+        margin: 20px 0;
+        font-size: 18px;
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgba(255, 255, 255, 0.8); // Semi-transparent white background
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .chrono-wrapper {
+        background-color: rgba(255, 255, 255, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .outer-chrono-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+.fade-in {
+    opacity: 1;
+}
