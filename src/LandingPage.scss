@@ -82,11 +82,13 @@ $initialButtonHeight: 50px;
     }
 }
 
-// Wingtip Button
 .wingtip-button {
   @include buttonStyle;
   transition: opacity 2s ease;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wingtip-button.text-invisible {

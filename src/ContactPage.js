@@ -41,7 +41,7 @@ function ContactPage() {
         const timer2 = setTimeout(() => setTextareaBorderColor(true), 3000);
         const timer3 = setTimeout(() => setButtonColor(true), 4000);
         const timer4 = setTimeout(() => setPageColor(true), 5000); // This will include the text color change
-        const timer5 = setTimeout(() => setBackgroundImageOpacity(true), 8000); // After text color changes
+        const timer5 = setTimeout(() => setBackgroundImageOpacity(true), 6000); // After text color changes
     
         return () => {
             clearTimeout(timer1);
@@ -55,9 +55,10 @@ function ContactPage() {
     return (
         <div className={`contact-page ${fadeIn ? 'fade-in' : ''} ${pageColor ? 'page-color' : ''}`}>
             {showModal && <Modal />}
+            <div className="page-header">
+                <h1>Contact the Dev</h1>
+            </div>
             <div className={`${backgroundImageOpacity ? 'background-image-visible' : ''} background-image-wrapper`}></div>
-            <h1 className="contact-us-tag">Contact Us</h1>
-
             <div className={`contact-form-container 
                     ${buttonBgColor ? 'button-background-color' : ''} 
                     ${textareaBorderColor ? 'textarea-border-color' : ''}`}>

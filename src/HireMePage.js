@@ -67,7 +67,9 @@ function HireMePage() {
 
     return (
         <div className={`hire-me-page ${fadeIn ? 'fade-in' : ''}`}>
-            <h1 className="page-title">Professional History</h1>
+            <div className="page-header">
+                <h1 className="page-title">Professional History</h1>
+            </div>
             <p className="intro-paragraph">Thank you for your interest. I've organized my journey so far below as a timeline - why not have a look?</p>
             <div className="outer-chrono-wrapper">
                 <div className="chrono-wrapper">
@@ -75,7 +77,7 @@ function HireMePage() {
                         <Chrono items={items} theme = {{primary: "gray", secondary: "black"}} fontSizes={{title:"0.8rem", cardHeader: "0.8rem", cardText: "0.7rem", cardSubtitle: "0.75rem"}}mode="VERTICAL_ALTERNATING"/>
                     </div>
                 </div>
-            </div>
+            </div> 
             <p className="conclusion-paragraph">email: jared.d.menard@gmail.com</p>
             <NavigationPane />
         </div>

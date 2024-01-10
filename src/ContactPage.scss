@@ -3,6 +3,16 @@
     src: url('../public/fonts/exo2.ttf') format('truetype');
 }
 
+.page-header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 2px solid white;
+    z-index: 1; // Ensure it's above the background
+    position: relative; // Make sure it's positioned in the stacking context
+}
+
 .modal {
     position: fixed;
     top: 0;

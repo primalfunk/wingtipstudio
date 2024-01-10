@@ -1,0 +1,23 @@
+.music-wall {
+    display: flex;
+    flex-direction: column;
+
+    .album-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        max-height:73vh;
+        overflow-y: auto; 
+
+    .soundcloud-player {
+        margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 480px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    }
+}
