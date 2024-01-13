@@ -1,0 +1,61 @@
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; // Full viewport height
+    justify-content: space-between; // Pushes children to start and end of container
+    position: relative; // Needed for absolute positioning context for children
+}
+
+.bkg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../public/images/music-back.png');
+    background-size: cover;
+    z-index: -1; // Behind other content
+}
+
+.page-header {
+    font-family: 'Exo2';
+    height: 5vh;
+    z-index: 1; // Ensure it's above the background
+    color: white; // Adjust for visibility
+}
+
+.explorer-blurb {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    font-family: 'Exo2';
+    color: white; // Adjust for visibility
+    z-index: 1; // Above background
+    margin: 10vh auto 0; // Adjust as needed
+}
+
+.game-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 80vh;
+    z-index: 1; // Above background
+}
+
+.filler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    font-family: 'Exo2';
+    z-index: 1; // Above background
+}
+
+.navigation-pane {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 1; // Ensure it's above the background
+}
