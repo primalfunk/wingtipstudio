@@ -4,6 +4,7 @@
     min-height: 100vh; // Full viewport height
     justify-content: space-between; // Pushes children to start and end of container
     position: relative; // Needed for absolute positioning context for children
+    z-index: 0;
 }
 
 .bkg-image {
@@ -14,13 +15,13 @@
     height: 100vh;
     background-image: url('../public/images/music-back.png');
     background-size: cover;
-    z-index: -1; // Behind other content
+    z-index: 0; // Lower than other content
 }
 
 .page-header {
     font-family: 'Exo2';
     height: 5vh;
-    z-index: 1; // Ensure it's above the background
+    z-index: 10; // Ensure it's above the background
     color: white; // Adjust for visibility
 }
 
@@ -35,12 +36,34 @@
     margin: 10vh auto 0; // Adjust as needed
 }
 
+.link-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none; // Removes underline from link
+    font-family: 'Exo2';
+    font-size: 16px;
+    transition: background-color 0.3s;
+    z-index: 3;
+
+    &:hover {
+        background-color: #0056b3;
+        cursor: pointer;
+    }
+}
+
 .game-wrapper {
     display: flex;
     justify-content: center;
+    align-items: center; // Vertically center the content
     width: 100vw;
-    height: 80vh;
-    z-index: 1; // Above background
+    height: auto;
+    z-index: 3; // Ensure it's above the background and other content
+    // Add a temporary background color for debugging
 }
 
 .filler {

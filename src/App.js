@@ -6,6 +6,7 @@ import CodePage from './CodePage';
 import MusicPage from './MusicPage';
 import ContactPage from './ContactPage';
 import HireMePage from './HireMePage';
+import SpaceExplorerPage from './SpaceExplorer'; // Ensure this import is correct
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
               <Route path="/music" element={<MusicPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/hireme" element={<HireMePage />} />
+              <Route path="/game" element={<SpaceExplorerPage />} /> {/* Updated this line */}
               {/* Add other routes as needed */}
           </Routes>
       </Router>
