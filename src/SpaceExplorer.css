@@ -1,0 +1,15 @@
+.game-page {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+}
+
+.link {
+    color: white;
+}
+
+.controls-exp {
+    width: 50vw;
+}

@@ -78,7 +78,7 @@ function LandingPage() {
                     onClick={handleClick}
                     style={{ opacity: wingtipButtonVisible ? 1 : 0, transition: 'opacity 2s ease' }}
                 >
-                    {wingtipButtonTextVisible ? 'Welcome to Wingtip Studio' : ''}
+                    {wingtipButtonTextVisible ? 'Wingtip Studio' : ''}
                 </button>
             )}
             <div className="quadrant-container">

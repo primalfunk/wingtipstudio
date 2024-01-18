@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Exo2';
+    src: url('../public/fonts/exo2.ttf') format('truetype');
+}
+
+.game-page {
+    background-color: black;
+    display: flex;
+}

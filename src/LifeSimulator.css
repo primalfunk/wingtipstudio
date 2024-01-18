@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'Exo2';
+    src: url('../public/fonts/exo2.ttf') format('truetype');
+}
+
+.page-container {
+    font-family: 'Exo2';
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+}
+
+.canvas-container {
+    height: 50vh;
+}
+
+.atomcount {
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 20vh;
+    width: 100vw;
+}
+
+.blue-controls {
+    display: flex;
+    flex-direction: column;
+}
+
+.red-controls {
+    display: flex;
+    flex-direction: column;
+}
+
+.cyan-controls {
+    display: flex;
+    flex-direction: column;
+}
+
+.green-controls {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.button-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.gravity-exp {
+    width: 30vw;
+    padding-left: 50px;
+}

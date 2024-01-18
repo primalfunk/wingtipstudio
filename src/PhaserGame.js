@@ -57,7 +57,7 @@ class SpaceExplorerScene extends Phaser.Scene {
         
         this.zoomInKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Z);
         this.zoomOutKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.X);
-        this.cameras.main.setZoom(0.4);
+        this.cameras.main.setZoom(1);
     }
 
     initTitleArea() {
@@ -392,7 +392,7 @@ export function initializePhaserGame(parentElementId) {
             default: 'arcade',
             arcade: {
                 gravity: { x: 0, y: 0 },
-                debug: true
+                debug: false
             }
         },
         scene: [SpaceExplorerScene, UIScene],

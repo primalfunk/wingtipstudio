@@ -10,11 +10,13 @@ function CodePage() {
                 <h1>Coding Porfolio Projects</h1>
             </div>
             <div className="bkg-image">
-                <div>
-                    <p className="explorer-blurb">*1.12.24* Space Explorer - press Z and X to zoom, arrow keys to move in zero-G physics</p>
-                </div>
+                <p className="explanation">Space Explorer Game - press Z and X to zoom, side arrows to rotate the ship, and up/down to apply thrust in a zero-G environment. Stars have visible gravity pools, asteroids have random speed, direction and rotation.</p>
                 <div className="game-wrapper">
-                    <Link to="/game" className="link-button" onClick={() => alert('Clicked!')}>Play Space Explorer Game</Link>
+                    <Link to="/space-game" className="link-button">Play Space Explorer Game</Link>
+                </div>
+                <div className="life-sim-wrapper">
+                    <p className="explanation">Particle Simulations - using gravitational forces of attracting and repelling, watch as particles come to life and exhibit different kinds of interesting behaviors. Fine-tune the forces yourself, or hit 'Randomize' to get randomly generated values.</p>
+                    <Link to="/life-sim" className="link-button">Explore Life-like Particle Simulations</Link>
                 </div>
                 <div className="filler">
                     <p>Further additions to the portfolio projects will go in this space.</p>

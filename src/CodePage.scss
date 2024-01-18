@@ -1,9 +1,8 @@
 .page-wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; // Full viewport height
-    justify-content: space-between; // Pushes children to start and end of container
-    position: relative; // Needed for absolute positioning context for children
+    min-height: 100vh;
+    position: relative;
     z-index: 0;
 }
 
@@ -25,9 +24,8 @@
     color: white; // Adjust for visibility
 }
 
-.explorer-blurb {
-    display: flex;
-    flex-direction: column;
+.explanation {
+    width: 50vw;
     position: relative;
     text-align: center;
     font-family: 'Exo2';
@@ -37,7 +35,8 @@
 }
 
 .link-button {
-    display: inline-block;
+    display: flex;
+    width: 100px;
     padding: 10px 20px;
     margin: 10px;
     background-color: #007bff;
@@ -81,4 +80,11 @@
     bottom: 0;
     width: 100%;
     z-index: 1; // Ensure it's above the background
+}
+
+.life-sim-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
