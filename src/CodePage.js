@@ -18,6 +18,10 @@ function CodePage() {
                     <p className="explanation">Particle Simulations - using gravitational forces of attracting and repelling, watch as particles come to life and exhibit different kinds of interesting behaviors. Fine-tune the forces yourself, or hit 'Randomize' to get randomly generated values.</p>
                     <Link to="/life-sim" className="link-button">Explore Life-like Particle Simulations</Link>
                 </div>
+                <p className="explanation">Conway's Game of Life - start/pause/reset the simulation.</p>
+                <div className="life-wrapper">
+                    <Link to="/life-game" className="link-button">Conway's Game of Life</Link>
+                </div>
                 <div className="filler">
                     <p>Further additions to the portfolio projects will go in this space.</p>
                 </div>

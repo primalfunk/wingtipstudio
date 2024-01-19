@@ -8,6 +8,7 @@ import ContactPage from './ContactPage';
 import HireMePage from './HireMePage';
 import SpaceExplorerPage from './SpaceExplorer';
 import LifeSimulator from './LifeSimulator'
+import GameOfLifeComponent from './GameOfLifeComponent'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/hireme" element={<HireMePage />} />
               <Route path="/space-game" element={<SpaceExplorerPage />} />
               <Route path="/life-sim" element={<LifeSimulator />} />
+              <Route path="/life-game" element={<GameOfLifeComponent />} />
               {/* Add other routes as needed */}
           </Routes>
       </Router>

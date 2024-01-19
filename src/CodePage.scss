@@ -14,14 +14,14 @@
     height: 100vh;
     background-image: url('../public/images/music-back.png');
     background-size: cover;
-    z-index: 0; // Lower than other content
+    z-index: 0;
 }
 
 .page-header {
     font-family: 'Exo2';
     height: 5vh;
-    z-index: 10; // Ensure it's above the background
-    color: white; // Adjust for visibility
+    z-index: 10;
+    color: white;
 }
 
 .explanation {
@@ -29,21 +29,21 @@
     position: relative;
     text-align: center;
     font-family: 'Exo2';
-    color: white; // Adjust for visibility
-    z-index: 1; // Above background
-    margin: 10vh auto 0; // Adjust as needed
+    color: white;
+    z-index: 1;
+    margin: 10vh auto 0;
 }
 
 .link-button {
     display: flex;
-    width: 100px;
+    width: 150px;
     padding: 10px 20px;
     margin: 10px;
     background-color: #007bff;
     color: white;
     text-align: center;
     border-radius: 5px;
-    text-decoration: none; // Removes underline from link
+    text-decoration: none;
     font-family: 'Exo2';
     font-size: 16px;
     transition: background-color 0.3s;
@@ -58,11 +58,19 @@
 .game-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center; // Vertically center the content
+    align-items: center;
     width: 100vw;
     height: auto;
-    z-index: 3; // Ensure it's above the background and other content
-    // Add a temporary background color for debugging
+    z-index: 3;
+}
+
+.life-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+    z-index: 3;
 }
 
 .filler {
@@ -72,14 +80,14 @@
     position: relative;
     color: white;
     font-family: 'Exo2';
-    z-index: 1; // Above background
+    z-index: 1;
 }
 
 .navigation-pane {
     position: absolute;
     bottom: 0;
     width: 100%;
-    z-index: 1; // Ensure it's above the background
+    z-index: 1;
 }
 
 .life-sim-wrapper {
