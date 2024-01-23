@@ -8,9 +8,9 @@ const SoundCloudPlayer = ({ trackUrl }) => {
         <iframe
         className="soundcloud-player"
             width="100%"
-            height="400px"
+            height="300px"
             scrolling="no"
-            frameborder="no"
+            frameBorder="no"
             allow="autoplay"
             src={embedUrl}>
         </iframe>

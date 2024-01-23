@@ -1,5 +1,5 @@
 // Define Variables
-$navigationPaneBgColor: rgb(220, 220, 255);
+$navigationPaneBgColor: white;
 $navigationPaneTextColor: black;
 $navigationPaneBorderTopColor: white;
 
@@ -14,26 +14,18 @@ $navigationPaneBorderTopColor: white;
   @include flexCenter;
   position: absolute;
   background-color: $navigationPaneBgColor;
-  top: 0;
-  height: 5%;
+  bottom: 0;
   width: 100%;
   padding: 10px 0;
   border-top: 1px solid $navigationPaneBorderTopColor;
-  z-index: 1000;
   
   .nav-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
     padding: 0 20px;
-    align-items: center;
-    z-index: 1000;
-  }
 
-  .wingtip-icon {
-    width: 7vw;
   }
-
   .hamburger {
     cursor: pointer;
     span {
@@ -59,14 +51,12 @@ $navigationPaneBorderTopColor: white;
 
   .menu {
     position: absolute;
-    top: 100%; // Position menu below the navbar
-    left: 50%;
-    width: 90px;
+    bottom: 35px;
+    width: 20%;
     text-align: center;
     background-color: $navigationPaneBgColor;
     padding: 10px 0;
     border-top: 1px solid $navigationPaneBorderTopColor;
-    z-index: 1001;
 
     a {
       color: $navigationPaneTextColor;
@@ -74,10 +64,5 @@ $navigationPaneBorderTopColor: white;
       display: block;
       margin: 10px 0;
     }
-  }
-
-  span {
-    color: $navigationPaneTextColor;
-    text-decoration: none;
   }
 }

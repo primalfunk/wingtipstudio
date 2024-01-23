@@ -1,23 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './NavigationPane.scss';
+import './Hamburger.scss';
 
-function NavigationPane() {
+function Hamburger() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {
-        console.log("Menu is open: " + menuOpen);
         setMenuOpen(!menuOpen);
     };
 
     return (
         <div className="navigation-pane">
           <div className="nav-container">
-            <img
-                src={"/images/WingTipStudioLight.png"}
-                alt="Wingtip Studio Icon"
-                className="wingtip-icon"
-            />
             <div className="hamburger" onClick={toggleMenu}>
                 <span></span>
                 <span></span>
@@ -33,11 +27,9 @@ function NavigationPane() {
                     <Link to="/hireme" onClick={toggleMenu}>Hire Me</Link>
                 </div>
             )}
-
-            <span><b>All Rights Reserved 2024</b></span>
           </div>
         </div>
     );
 }
 
-export default NavigationPane;
+export default Hamburger;

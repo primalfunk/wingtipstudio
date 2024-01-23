@@ -1,23 +1,38 @@
 .music-wall {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: 100vh;
 
     .album-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        max-height:73vh;
-        overflow-y: auto; 
+        max-height: 100vh;
+        overflow-y: auto;
+        max-width: 98%;
+        margin: auto;
+    }
 
     .soundcloud-player {
-        margin-top: auto;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        overflow-y: scroll;
     }
 
     @media (max-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
+        .album-container {
+            grid-template-columns: repeat(2, 1fr); // Two columns for medium screens
+        }
     }
 
     @media (max-width: 480px) {
-        grid-template-columns: repeat(1, 1fr);
-    }
+        .album-container {
+            grid-template-columns: 1fr; // One column for small screens
+            max-height: auto; // Adjusted for small screens
+        }
+        .soundcloud-player {
+            height: 300px; // Adjusted height for small screens
+        }
     }
 }
