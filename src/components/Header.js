@@ -2,19 +2,29 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import WingTipStudioLight from '../assets/images/WingTipStudioLight.png';  // Import the image
 
 const HeaderContainer = styled.header`
-  padding: 40px 20px;
+  width: 100%;
+  height: 30vh;  /* Make the header's height dynamic (30% of the viewport height) */
   text-align: center;
-  background: linear-gradient(90deg, #f39c12 0%, #e74c3c 100%);
-  color: #fff;
-  margin-bottom: 20px; // Add margin to push content down
+  background-image: url(${WingTipStudioLight});
+  background-size: contain;
+  background-position: center;  /* Keep it centered */
+  background-repeat: no-repeat;  /* Ensure no repeat of the image */
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 const Title = styled(motion.h1)`
   font-size: 3em;
   font-weight: 600;
   margin: 0;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);  /* Text shadow to improve readability */
+  position: relative;
+  top: 50%;  /* Center vertically */
+  transform: translateY(-50%);  /* Adjust position to vertically align the text */
 `;
 
 const Header = () => {

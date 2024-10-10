@@ -6,9 +6,9 @@ import { motion } from 'framer-motion';
 import { FaMusic } from 'react-icons/fa';
 
 const TrackItemContainer = styled.div`
-  min-width: 250px;
+  min-width: 150px;
   flex: 0 0 auto;
-  margin-right: 20px;
+  margin-right: 10px;
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
